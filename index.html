@@ -527,17 +527,36 @@ select{font-family:var(--font-body)}
 }
 
 
-/* QUICK POLISH FIXES — deployed 2026-05-16 */
+
+/* QUICK POLISH FIXES — header/logo visibility + cleaner hero */
+.nav{
+  background:#ffffff !important;
+  border-bottom:3px solid var(--orange) !important;
+  min-height:92px !important;
+  padding:14px clamp(20px,4vw,46px) !important;
+  box-shadow:0 2px 18px rgba(0,0,0,.12) !important;
+}
+.nav-logo{
+  display:flex !important;
+  align-items:center !important;
+}
 .nav-logo img{
-  height:60px !important;
-  max-height:60px !important;
+  height:68px !important;
+  max-height:68px !important;
   width:auto !important;
   min-width:0 !important;
   object-fit:contain !important;
+  opacity:1 !important;
+  filter:none !important;
 }
-.nav{
-  min-height:86px !important;
-  padding:12px clamp(18px,4vw,42px) !important;
+.nav-right .btn-orange,
+.nav-link.btn-orange{
+  background:var(--orange) !important;
+  color:#ffffff !important;
+  padding:13px 22px !important;
+  font-weight:800 !important;
+  letter-spacing:.11em !important;
+  box-shadow:0 3px 12px rgba(0,0,0,.14) !important;
 }
 .hero{
   padding:0 !important;
@@ -570,7 +589,7 @@ select{font-family:var(--font-body)}
   position:relative !important;
   z-index:5 !important;
   width:min(520px,42vw) !important;
-  margin:86px 0 72px clamp(28px,4vw,58px) !important;
+  margin:92px 0 72px clamp(28px,4vw,58px) !important;
   padding:clamp(34px,4vw,58px) !important;
   align-self:center !important;
   justify-content:center !important;
@@ -585,25 +604,26 @@ select{font-family:var(--font-body)}
   letter-spacing:.055em !important;
 }
 .hero-title em{color:var(--orange) !important;}
-.hero-sub{color:rgba(255,255,255,.76) !important;max-width:42ch !important;text-align:left !important;margin-left:0 !important;margin-right:0 !important;}
+.hero-sub{
+  color:rgba(255,255,255,.76) !important;
+  max-width:42ch !important;
+  text-align:left !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
 .hero-actions{align-items:flex-start !important;}
 @media(max-width:860px){
-  .nav{min-height:74px !important;}
-  .nav-logo img{height:48px !important;}
+  .nav{
+    min-height:78px !important;
+    padding:12px 18px !important;
+  }
+  .nav-logo img{height:54px !important;max-height:54px !important;}
   .hero{min-height:auto !important;display:block !important;}
   .hero-ba-split{position:relative !important;height:70vw !important;min-height:360px !important;}
   .hero-ba-before,.hero-ba-after{min-height:360px !important;}
   .hero-content{width:auto !important;margin:0 !important;border:none !important;box-shadow:none !important;}
 }
-/* QUICK POLISH FIXES... */
-@media(max-width:860px){
-  ...
-}
 
-/* PASTE SPATIAL WRAPS CSS HERE */
-
-</style>
-</head>
 </style>
 </head>
 <body>
@@ -742,15 +762,7 @@ select{font-family:var(--font-body)}
     </div>
   </div>
 </section>
-</section>
 
-<!-- ADDITIONAL SERVICE: SPATIAL WRAPS -->
-<section class="spatial-wraps-section" id="spatial-wraps">
-  ...
-</section>
-
-<!-- CONFIGURATOR -->
-<section class="cfg-section" id="configurator">
 <!-- CONFIGURATOR -->
 <section class="cfg-section" id="configurator">
   <div class="cfg-label-bar">
@@ -1610,338 +1622,5 @@ render();
 
 })();
 </script>
-<!-- SPATIAL WRAPS ADDITION -->
-<script>
-(function(){
-  const css = `
-    .spatial-wraps-section{
-      background:#ffffff;
-      padding:40px 16px;
-    }
-
-    .spatial-wraps-card{
-      max-width:1280px;
-      margin:0 auto;
-      overflow:hidden;
-      border:1px solid #d9dfeb;
-      background:#ffffff;
-      border-radius:26px;
-      box-shadow:0 18px 45px rgba(40,59,98,.14);
-    }
-
-    .spatial-wraps-main{
-      display:grid;
-      grid-template-columns:.38fr .62fr;
-      align-items:stretch;
-    }
-
-    .spatial-wraps-copy{
-      display:flex;
-      align-items:center;
-      padding:48px;
-    }
-
-    .spatial-wraps-copy-inner{
-      max-width:470px;
-    }
-
-    .spatial-eyebrow{
-      margin-bottom:28px;
-    }
-
-    .spatial-eyebrow p{
-      margin-bottom:12px;
-      font-size:11px;
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:.24em;
-      color:#ED930E;
-    }
-
-    .spatial-eyebrow-line{
-      width:96px;
-      height:3px;
-      background:#ED930E;
-    }
-
-    .spatial-title{
-      margin-bottom:20px;
-      font-family:var(--font-head);
-      font-size:clamp(3rem,5vw,4.3rem);
-      font-weight:900;
-      line-height:.92;
-      letter-spacing:-.03em;
-      color:#283B62;
-    }
-
-    .spatial-title span{
-      color:#ED930E;
-    }
-
-    .spatial-description{
-      margin-bottom:28px;
-      font-size:16px;
-      line-height:1.7;
-      color:#3f4858;
-    }
-
-    .spatial-feature-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-bottom:32px;
-    }
-
-    .spatial-feature{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      border:1px solid #dde3ee;
-      background:#ffffff;
-      padding:13px 12px;
-      border-radius:6px;
-      box-shadow:0 2px 8px rgba(40,59,98,.06);
-      font-size:12px;
-      line-height:1.2;
-      font-weight:900;
-      color:#283B62;
-    }
-
-    .spatial-dot-wrap{
-      width:24px;
-      height:24px;
-      flex-shrink:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border:1px solid rgba(237,147,14,.5);
-      border-radius:3px;
-    }
-
-    .spatial-dot{
-      width:8px;
-      height:8px;
-      border-radius:50%;
-      background:#ED930E;
-    }
-
-    .spatial-button{
-      display:inline-flex;
-      align-items:center;
-      gap:12px;
-      background:#ED930E;
-      color:#ffffff;
-      padding:16px 28px;
-      border-radius:2px;
-      font-size:13px;
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:.14em;
-      box-shadow:0 10px 24px rgba(237,147,14,.25);
-      transition:background .2s ease, transform .2s ease;
-    }
-
-    .spatial-button:hover{
-      background:#d98208;
-      transform:translateY(-2px);
-    }
-
-    .spatial-image-wrap{
-      padding:40px;
-    }
-
-    .spatial-image-frame{
-      height:100%;
-      min-height:380px;
-      overflow:hidden;
-      border:1px solid #d9dfeb;
-      background:#eef2f7;
-      border-radius:10px;
-      box-shadow:0 18px 40px rgba(40,59,98,.12);
-    }
-
-    .spatial-image-frame img{
-      width:100%;
-      height:100%;
-      min-height:380px;
-      object-fit:cover;
-      display:block;
-    }
-
-    .spatial-bottom-strip{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      background:linear-gradient(90deg,#283B62,#14213f);
-      color:#ffffff;
-      padding:32px 48px;
-    }
-
-    .spatial-bottom-item{
-      padding:16px 32px;
-      border-right:1px solid rgba(255,255,255,.1);
-    }
-
-    .spatial-bottom-item:first-child{
-      padding-left:0;
-    }
-
-    .spatial-bottom-item:last-child{
-      border-right:none;
-      padding-right:0;
-    }
-
-    .spatial-bottom-item h3{
-      margin-bottom:8px;
-      font-family:var(--font-head);
-      font-size:14px;
-      font-weight:900;
-      text-transform:uppercase;
-      letter-spacing:.05em;
-      color:#ffffff;
-    }
-
-    .spatial-bottom-item p{
-      font-size:14px;
-      line-height:1.6;
-      color:rgba(255,255,255,.72);
-    }
-
-    @media(max-width:900px){
-      .spatial-wraps-main{
-        grid-template-columns:1fr;
-      }
-
-      .spatial-wraps-copy{
-        padding:34px 26px;
-      }
-
-      .spatial-image-wrap{
-        padding:0 26px 34px;
-      }
-
-      .spatial-bottom-strip{
-        grid-template-columns:1fr;
-        padding:24px 28px;
-      }
-
-      .spatial-bottom-item{
-        padding:18px 0;
-        border-right:none;
-        border-bottom:1px solid rgba(255,255,255,.1);
-      }
-
-      .spatial-bottom-item:last-child{
-        border-bottom:none;
-      }
-    }
-
-    @media(max-width:560px){
-      .spatial-feature-grid{
-        grid-template-columns:1fr;
-      }
-
-      .spatial-title{
-        font-size:3rem;
-      }
-    }
-  `;
-
-  const html = `
-    <section class="spatial-wraps-section" id="spatial-wraps">
-      <div class="spatial-wraps-card">
-
-        <div class="spatial-wraps-main">
-
-          <div class="spatial-wraps-copy">
-            <div class="spatial-wraps-copy-inner">
-
-              <div class="spatial-eyebrow">
-                <p>Additional Services</p>
-                <div class="spatial-eyebrow-line"></div>
-              </div>
-
-              <h2 class="spatial-title">
-                Spatial<br>
-                <span>Wraps</span>
-              </h2>
-
-              <p class="spatial-description">
-                Custom wall wraps and architectural graphics that transform commercial spaces, hotels, offices, apartments, retail spaces, and more, without major renovation or downtime.
-              </p>
-
-              <div class="spatial-feature-grid">
-                <div class="spatial-feature">
-                  <span class="spatial-dot-wrap"><span class="spatial-dot"></span></span>
-                  Wall wraps
-                </div>
-
-                <div class="spatial-feature">
-                  <span class="spatial-dot-wrap"><span class="spatial-dot"></span></span>
-                  Murals
-                </div>
-
-                <div class="spatial-feature">
-                  <span class="spatial-dot-wrap"><span class="spatial-dot"></span></span>
-                  Branded spaces
-                </div>
-
-                <div class="spatial-feature">
-                  <span class="spatial-dot-wrap"><span class="spatial-dot"></span></span>
-                  Interior spaces
-                </div>
-              </div>
-
-              <a href="#contact" class="spatial-button">
-                Ask About Spatial Wraps <span>→</span>
-              </a>
-
-            </div>
-          </div>
-
-          <div class="spatial-image-wrap">
-            <div class="spatial-image-frame">
-              <img src="spatial-wraps.png" alt="Custom spatial wall wrap example">
-            </div>
-          </div>
-
-        </div>
-
-        <div class="spatial-bottom-strip">
-
-          <div class="spatial-bottom-item">
-            <h3>Any Design</h3>
-            <p>Wood grain, murals, patterns, custom prints, and branded artwork.</p>
-          </div>
-
-          <div class="spatial-bottom-item">
-            <h3>Commercial Spaces</h3>
-            <p>Great for hotels, offices, retail, restaurants, and apartment properties.</p>
-          </div>
-
-          <div class="spatial-bottom-item">
-            <h3>No Major Remodel</h3>
-            <p>Transform existing surfaces without full replacement or long downtime.</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-  `;
-
-  if(!document.getElementById('spatial-wraps-css')){
-    const style = document.createElement('style');
-    style.id = 'spatial-wraps-css';
-    style.textContent = css;
-    document.head.appendChild(style);
-  }
-
-  const configurator = document.getElementById('configurator');
-
-  if(configurator && !document.getElementById('spatial-wraps')){
-    configurator.insertAdjacentHTML('beforebegin', html);
-  }
-})();
-</script>   
 </body>
 </html>
